@@ -1,9 +1,10 @@
-# Acme — Fullstack App (Frontend + Backend)
+# Acme assignment (Legal Assistant) — Fullstack App (Frontend + Backend)
 
 This repository contains a small full-stack application with a Vite-powered frontend and a FastAPI backend. The frontend and backend have their own Dockerfiles and development scripts. This README explains how to install, run, and troubleshoot the project on Windows (PowerShell) and Unix-like systems.
 
 ## Table of contents
 
+- App Description
 - Overview
 - Prerequisites
 - Project structure
@@ -14,6 +15,40 @@ This repository contains a small full-stack application with a Vite-powered fron
 - Troubleshooting
 - Contributing
 - License
+
+## App Description
+  This is a Legal Assistant application that helps users search and analyze legal documents. Here are the key features:
+
+  1. Document Search: Users can search through a collection of legal documents using natural language queries (e.g., "breach of contract summary for clause 5")
+
+  2. Document Types: The system contains various types of legal documents including:
+
+  * Employment Contracts
+  * Non-Disclosure Agreements (NDAs)
+  * Privacy Policies
+  * Lease Agreements
+  * Intellectual Property Rights Documents
+  
+  3. Search Results: For each search, the application provides:
+
+  * A summary of the search results
+  * Matching documents with details like:
+    * Document title
+    * Document type (Contract, Agreement, Policy, etc.)
+    * Date
+    * A snippet/preview of the content
+    * Full excerpt available on demand
+  
+  4. Technical Implementation:
+
+  * Frontend: Built with React and Vite
+  * Backend: Powered by Python FastAPI
+  * The backend processes search queries and returns relevant document matches
+  * Results are displayed in an easy-to-read card format in the frontend
+  
+  5. Purpose: The application serves as a tool to help users quickly find and understand relevant legal documents and their contents, though it's marked as "Not a legal adviser" to clarify it's for informational purposes only.
+
+  The application is currently using a mocked dataset of legal documents for demonstration purposes. In a real-world scenario, the backend would connect to a database or API for real data.
 
 ## Overview
 
@@ -69,7 +104,7 @@ python -m venv .venv
 pip install --upgrade pip
 pip install -r requirements.txt
 # Start the backend (FastAPI using uvicorn)
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host localhost --port 8000
 ```
 
 Notes:
