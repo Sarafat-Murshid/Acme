@@ -17,7 +17,7 @@ export default function App() {
 
     try {
       const resp = await axios.post(
-        "http://localhost:8000/generate",
+        "https://acme-ydsm.onrender.com/generate",
         { query: q },
         { timeout: 20000 }
       );
